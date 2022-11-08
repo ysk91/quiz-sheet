@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to: "home#top"
-  resources :quizzes
+  resources :quizzes, only: [:index, :show, :new, :create]
 end
