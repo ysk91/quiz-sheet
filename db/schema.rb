@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_10_102342) do
+ActiveRecord::Schema.define(version: 2022_11_10_103407) do
 
   create_table "questions", charset: "utf8mb4", force: :cascade do |t|
     t.integer "quiz_id"
     t.string "question"
-    t.string "answer"
+    t.boolean "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
