@@ -9,8 +9,8 @@ class Google::Spreadsheets
   # 認証
   def authorize
     json_key = JSON.generate(
-      private_key: <%= ENV['PRIVATE_KEY'] %>,
-      client_email: <%= ENV['CLIENT_EMAIL'] %>
+      private_key: ENV['PRIVATE_KEY'],
+      client_email: ENV['CLIENT_EMAIL']
     )
 
     json_key_io = StringIO.new(json_key)
