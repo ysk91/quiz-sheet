@@ -3,9 +3,9 @@
 one:
   quiz_id: 1
   question: MyString
-  answer: MyString
+  answer: false
 
 two:
   quiz_id: 1
   question: MyString
-  answer: MyString
+  answer: false
