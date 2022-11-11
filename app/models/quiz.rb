@@ -9,7 +9,7 @@ class Quiz < ApplicationRecord
   validate :check_url
 
   def check_url
-    unless self.profile.start_with?("https://docs.google.com/spreadsheets/")
+    unless self.url.start_with?("https://docs.google.com/spreadsheets/")
       errors.add(:base, "そのURLは使用できません")
     end
   end
