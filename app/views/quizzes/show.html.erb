@@ -14,3 +14,22 @@
     <%= @quiz.spreadsheet_id %>
   </li>
 </ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Question</th>
+      <th scope="col">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each_with_index do |question, i| %>
+      <tr>
+        <th scope="row"><%= i+1 %></th>
+        <td><%= quistion.quiestion %></td>
+        <td><%= quistion.answer %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

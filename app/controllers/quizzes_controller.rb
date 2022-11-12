@@ -1,11 +1,12 @@
 class QuizzesController < ApplicationController
 
   def index
-    
+    @quizzes = Quiz.all
   end
 
   def show
     @quiz = Quiz.find(params[:id])
+    @questions = Question.where(quiz_id: @quiz.id)
   end
 
   def new
@@ -16,7 +17,7 @@ class QuizzesController < ApplicationController
   def create
     @quiz = Quiz.new(quiz_params)
     if @quiz.save
-      
+
       redirect_to quiz_path(@quiz)
     else
       render "new"

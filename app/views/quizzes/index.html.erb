@@ -1,1 +1,9 @@
 <h1>Quizzes#index</h1>
+
+<% @quizzes.each do |quiz| %>
+  <div class="container">
+    <%= quiz.title %>
+    <%= link_to "show", quiz_path(quiz) %>
+    <%= link_to "answer", "#" %>
+  </div>
+<% end %>
