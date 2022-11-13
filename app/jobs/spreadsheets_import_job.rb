@@ -14,14 +14,26 @@ class SpreadsheetsImportJob < ApplicationJob
     # 値が空だった場合はここで終了
     return if res.values.empty?
 
+    #@row_questions配列を定義
+    @row_questions = []
+
     res.values.drop(1).each do |row_data| # 1行目はヘッダーなので削除
       row = Row.new(*row_data)
-      attributes = row.to_h.slice(
+      @attributes = row.to_h.slice(
         :question,
         :answer
       )
-      question = Quiz.questions.build(attributes)
+      # @attributesハッシュに"quiz_id"の要素を追加する
+      @attributes["quiz_id"] = 1 #@quiz.id
+      # @row_questions配列にハッシュを入れる
+      @row_questions << @attributes
+      #この結果作成されるのは
+      # @row_questions = [{question: A?, answer: true, quiz_id: 1}, {question: B?, answer: false, quiz_id: 1}, ~~ ] という配列
+      # https://paiza.io/projects/MzBWRgEYi48ZUpshANx9kQ?locale=ja-jp
     end
+    # デバック用
+    # コンソールにて SpreadsheetsImportJob.perform_now("1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms", ["Class Data!A:B"]) を実行する
+    # p @row_questions
   end
 
   private
