@@ -20,9 +20,8 @@ class QuizzesController < ApplicationController
       # spreadsheet_idを作る
       # convert_url_to_spreadsheet_id(@quiz.url)
       # Active jobを実行してQuestionインスタンスを作成
-      SpreadsheetsImportJob.perform_now("1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms", ["Class Data!A:B"])
-      @questions = Question.create!(@row_questions)
-      redirect_to quiz_path(@quiz) # if @questions.save
+      SpreadsheetsImportJob.perform_now(@quiz.spreadsheet_id, ["シート1!A:B"], @quiz.id)
+      redirect_to quiz_path(@quiz)
     else
       render "new"
     end    

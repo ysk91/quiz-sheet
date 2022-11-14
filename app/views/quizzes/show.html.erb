@@ -27,9 +27,9 @@
     <% @questions.each_with_index do |question, i| %>
       <tr>
         <th scope="row"><%= i+1 %></th>
-        <td><%= quistion.quiestion %></td>
-        <td><%= quistion.answer %></td>
-      </tr>
+        <td><%= question.question %></td>
+        <td><%= question.answer %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
