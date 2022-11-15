@@ -2,11 +2,14 @@
 <html>
   <%= render 'shared/head' %>
 
-  <body class="container py-3">
-  <header class="container">
-  <%= link_to "TOP", root_path %>
+  <body>
+  <header class="container bg-light py-5">
+    <%= link_to "TOP", root_path %>
   </header>
+
+  <div class="container my-3">
     <%= yield %>
+  </div>
   </body>
 
   <%# bootstrapのCDNファイル読み込み %>
