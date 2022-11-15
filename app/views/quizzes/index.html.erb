@@ -4,6 +4,6 @@
   <div class="container">
     <%= quiz.title %>
     <%= link_to "show", quiz_path(quiz) %>
-    <%= link_to "answer", "#" %>
+    <%= link_to "answer", quiz_answer_path(quiz) %>
   </div>
 <% end %>

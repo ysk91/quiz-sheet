@@ -1,0 +1,20 @@
+<h1>Quizzes#answer</h1>
+
+<% @questions.each_with_index do |question, i| %>
+  <h3 class="mt-3">
+    <%= i+1 %>
+  </h3>
+  <div class="mb-2">
+    <%= question.question %>
+  </div>
+  <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample_<%= i %>" role="button" aria-expanded="false" aria-controls="collapseExample_<%= i %>">
+      答えを見る
+    </a>
+  </p>
+  <div class="collapse" id="collapseExample_<%= i %>">
+    <div class="card card-body">
+      <%= question.answer %>
+    </div>
+  </div>
+<% end %>
