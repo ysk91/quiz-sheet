@@ -37,4 +37,8 @@ yarn-debug.log*
 
 # 環境変数
 .env
+.env.development
 .env.production
+
+# API JSONファイル
+/lib/google/quiz-sheet-367904-0802bc7dbe04.json

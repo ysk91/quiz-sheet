@@ -1,1 +1,21 @@
 <h1>Quizzes#new</h1>
+
+<%= form_with model: @quiz do |f| %>
+  <ul>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    <li>
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </li>
+    <li>
+      <%= f.label :spreadsheet_id %>
+      <%= f.text_field :spreadsheet_id %>
+    </li>
+    <li>
+      <%= f.submit "送信", class: "btn btn-primary" %>
+    </li>    
+  </ul>
+<% end %>
