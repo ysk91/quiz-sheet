@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_10_103407) do
+ActiveRecord::Schema.define(version: 2022_11_15_213416) do
+
+  create_table "answers", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "question_id"
+    t.string "correct"
+    t.string "incorrect_1"
+    t.string "incorrect_2"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "questions", charset: "utf8mb4", force: :cascade do |t|
     t.integer "quiz_id"
     t.string "question"
-    t.boolean "answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

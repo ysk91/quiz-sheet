@@ -1,8 +1,8 @@
 class Question < ApplicationRecord
 
   belongs_to :quiz
+  has_many :answers, dependent: :destroy
 
   validates :question, presence: true
-  # validates :answer, presence: true #falseはblankを返すのでNG
 
 end
