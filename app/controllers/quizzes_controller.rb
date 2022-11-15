@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+  include QuizzesHelper
 
   def index
     @quizzes = Quiz.all
@@ -16,9 +17,9 @@ class QuizzesController < ApplicationController
 
   def create
     @quiz = Quiz.new(quiz_params)
+    # spreadsheet_idを作る
+    @quiz[:spreadsheet_id] = @quiz.url[/(?<=https:\/\/docs.google.com\/spreadsheets\/d\/).+(?=\/edit)/]
     if @quiz.save
-      # spreadsheet_idを作る
-      # convert_url_to_spreadsheet_id(@quiz.url)
       # Active jobを実行してQuestionインスタンスを作成
       SpreadsheetsImportJob.perform_now(@quiz.spreadsheet_id, ["シート1!A:B"], @quiz.id)
       redirect_to quiz_path(@quiz)
@@ -30,10 +31,6 @@ class QuizzesController < ApplicationController
   private
 
     def quiz_params
-      params.require(:quiz).permit(:title, :url, :spreadsheet_id)
-    end
-
-    def questions_params
-      params.require(:question).merge(quiz_id: @quiz.id)
+      params.require(:quiz).permit(:title, :url)
     end
 end

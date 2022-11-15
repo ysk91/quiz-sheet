@@ -14,6 +14,9 @@ module Myapp
     # スプシAPI lib/配下のファイルを読み込み用
     config.paths.add "lib", eager_load: true
 
+    # ヘルパーの呼び出しを限定
+    config.action_controller.include_all_helpers = false
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
