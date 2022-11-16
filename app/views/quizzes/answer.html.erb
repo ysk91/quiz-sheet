@@ -1,23 +1,34 @@
+<h2 class="mb-3">
+  <%= @quiz.title %>
+</h2>
+
 <% @questions.each_with_index do |q, i| %>
-  <div class="mb-3">
-    <h5>
+  <div class="mb-5">
+    <h4>
       Q<%= i+1 %>, <%= q.question %>
-    </h5>
-    <div class="container">
-      <div class="row">
-        <div class="col my-3">
-          <%= q.answer.correct %>
-        </div>
-        <div class="col my-3">
-          <%= q.answer.incorrect_1 %>
-        </div>
-        <div class="col my-3">
-          <%= q.answer.incorrect_2 %>
-        </div>
+    </h4>
+
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#correct_<%= i+1 %>" aria-expanded="false">
+        <%= q.answer.correct %>
+      </button>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#incorrect_<%= i+1 %>" aria-expanded="false">
+        <%= q.answer.incorrect_1 %>
+      </button>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#incorrect_<%= i+1 %>" aria-expanded="false">
+        <%= q.answer.incorrect_2 %>
+      </button>
+    </p>
+    <div class="collapse" id="correct_<%= i+1 %>">
+      <div class="card card-body">
+        <h5>正解!</h5>
+        <%= q.answer.comment %>
       </div>
     </div>
-    <div>
-      <%= q.answer.comment %>
+    <div class="collapse" id="incorrect_<%= i+1 %>">
+      <div class="card card-body">
+        <h5>不正解!</h5>
+      </div>
     </div>
   </div>
 <% end %>

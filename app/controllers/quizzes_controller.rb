@@ -29,6 +29,7 @@ class QuizzesController < ApplicationController
   end
 
   def answer
+    @quiz = Quiz.find(params[:id])
     @questions = Question.where(quiz_id: params[:id])
   end
 
