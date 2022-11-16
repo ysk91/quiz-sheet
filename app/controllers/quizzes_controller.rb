@@ -21,7 +21,7 @@ class QuizzesController < ApplicationController
     @quiz[:spreadsheet_id] = @quiz.url[/(?<=https:\/\/docs.google.com\/spreadsheets\/d\/).+(?=\/edit)/]
     if @quiz.save
       # Active jobを実行してQuestionインスタンスを作成
-      SpreadsheetsImportJob.perform_now(@quiz.spreadsheet_id, ["シート1!A:B"], @quiz.id)
+      SpreadsheetsImportJob.perform_now(@quiz.spreadsheet_id, ["シート1!A:E"], @quiz.id)
       redirect_to quiz_path(@quiz)
     else
       render "new"

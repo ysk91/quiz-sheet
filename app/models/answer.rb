@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
-  belongs_to :question, presence: true
+  belongs_to :question
 
   validates :correct, presence: true
   validates :incorrect_1, presence: true
