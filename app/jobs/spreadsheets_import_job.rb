@@ -15,10 +15,10 @@ class SpreadsheetsImportJob < ApplicationJob
       )
       @answer = Answer.create(
         question_id: @question.id,
-        correct: res.values[i][1],
-        incorrect_1: res.values[i][2],
-        incorrect_2: res.values[i][3],
-        comment: res.values[i][4]
+        correct: res.values[i+1][1],
+        incorrect_1: res.values[i+1][2],
+        incorrect_2: res.values[i+1][3],
+        comment: res.values[i+1][4]
       )
     end
 
