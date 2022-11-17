@@ -1,0 +1,55 @@
+<h2 class="mb-3">
+  <%= @quiz.title %>
+</h2>
+
+<% @questions.each_with_index do |q, i| %>
+  <div class="mb-5">
+    <h4>
+      Q<%= i+1 %>, <%= q.question %>
+    </h4>
+
+    <div class="container">
+      <div class="row item_wrapper_<%= i+1 %>">
+        <button class="btn btn-primary col mx-5 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#correct_<%= i+1 %>" aria-expanded="false">
+          <%= q.answer.correct %>
+        </button>
+        <button class="btn btn-primary col mx-5 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#incorrect_<%= i+1 %>" aria-expanded="false">
+          <%= q.answer.incorrect_1 %>
+        </button>
+        <button class="btn btn-primary col mx-5 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#incorrect_<%= i+1 %>" aria-expanded="false">
+          <%= q.answer.incorrect_2 %>
+        </button>
+      </div>
+    </div>
+    <div class="collapse mt-2" id="correct_<%= i+1 %>">
+      <div class="card card-body">
+        <h5>正解!</h5>
+        <%= q.answer.comment %>
+      </div>
+    </div>
+    <div class="collapse mt-2" id="incorrect_<%= i+1 %>">
+      <div class="card card-body">
+        <h5>不正解!</h5>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+  function shuffleContent(container) {
+    var content = container.find("button");
+    var total = content.length;
+    content.each(function() {
+      content.eq(Math.floor(Math.random() * total)).prependTo(container);
+    });
+  }
+  $(function() {
+    for (var i=0; i<1000; i++) {
+      shuffleContent($(".item_wrapper_" + i));
+    }
+  });
+</script>
+
+<!-- 参考 -->
+<!-- シャッフル表示 https://ecmemo.net/jquery-shuffle -->

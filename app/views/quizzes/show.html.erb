@@ -1,0 +1,41 @@
+<h1>Quizzes#show</h1>
+
+<ul>
+  <li>
+    <%= @quiz.id %>
+  </li>
+  <li>
+    <%= @quiz.title %>
+  </li>
+  <li>
+    <%= @quiz.url %>
+  </li>
+  <li>
+    <%= @quiz.spreadsheet_id %>
+  </li>
+</ul>
+
+
+<% @questions.each_with_index do |q, i| %>
+  <div class="mb-3">
+    <h5>
+      Q<%= i+1 %>, <%= q.question %>
+    </h5>
+    <div class="container">
+      <div class="row">
+        <div class="col my-3">
+          <%= q.answer.correct %>
+        </div>
+        <div class="col my-3">
+          <%= q.answer.incorrect_1 %>
+        </div>
+        <div class="col my-3">
+          <%= q.answer.incorrect_2 %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <%= q.answer.comment %>
+    </div>
+  </div>
+<% end %>

@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "home#top"
+  resources :quizzes, only: [:index, :show, :new, :create] 
+  get "/quizzes/:id/answer", to: "quizzes#answer", as: "quiz_answer"
 end

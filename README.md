@@ -1,24 +1,49 @@
-# README
+# Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Quiz-Sheet
+サイトURL: <br>
+Googleスプレッドシートと連携してクイズを作成するアプリです
 
-Things you may want to cover:
+### 環境構築
+DockerHub: <br>
+```
+$ 
+```
+で
 
-* Ruby version
+```
+$ docker-compose run -d
+```
+を実行し、 http://localhost:3000/ にアクセス
 
-* System dependencies
 
-* Configuration
+## 使用技術
++ Ruby 3.0.4
++ Rails 6.1.7
++ VScode
++ データベース
+  + 開発・テスト環境・本番環境: MySQL5.7
+  + 画像ストレージ: AWS S3
++ サーバー
+  + AWS
++ RSpec
 
-* Database creation
+## インフラ構成図
 
-* Database initialization
 
-* How to run the test suite
+## ER図
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 機能一覧
++ CRUD
++ Bootstrap
 
-* ...
+
+## テスト
+
+
+## フィードバック
+
+
+## アウトプット
+[Qiita](https://qiita.com/ysk91_engineer)参照
