@@ -5,11 +5,11 @@
 Googleスプレッドシートと連携してクイズを作成するアプリです
 
 ### 環境構築
-DockerHub: <br>
+DockerHub: https://hub.docker.com/r/ysk91/quiz-sheet<br>
 ```
-$ 
+$ docker pull ysk91/quiz-sheet
 ```
-で
+でDockerファイルをpull
 
 ```
 $ docker-compose run -d
@@ -23,10 +23,13 @@ $ docker-compose run -d
 + VScode
 + データベース
   + 開発・テスト環境・本番環境: MySQL5.7
-  + 画像ストレージ: AWS S3
 + サーバー
   + AWS
-+ RSpec
++ テスト
+  + RSpec
++ フロントエンド
+  + Bootstrap
+  + jQuery
 
 ## インフラ構成図
 
@@ -36,10 +39,11 @@ $ docker-compose run -d
 
 ## 機能一覧
 + CRUD
-+ Bootstrap
++ Google Spreadsheet API
 
 
-## テスト
+
+## テスト方法
 
 
 ## フィードバック
