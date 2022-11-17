@@ -8,22 +8,24 @@ class SpreadsheetsImportJob < ApplicationJob
     # 値が空だった場合はここで終了
     return if res.values.empty?
 
-    res.values.drop(1).each_with_index do |r, i|
-      @question = Question.create(
+    res.values.drop(1).each do |r|
+      question = Question.create(
         quiz_id: quiz_id,
         question: r[0]
       )
-      @answer = Answer.create(
-        question_id: @question.id,
-        correct: res.values[i+1][1],
-        incorrect_1: res.values[i+1][2],
-        incorrect_2: res.values[i+1][3],
-        comment: res.values[i+1][4]
+    end
+
+    res.values.drop(1).each do |r|
+      answer = Answer.create(
+        question_id: quiz_id,
+        correct: r[1],
+        incorrect_1: r[2],
+        incorrect_2: r[3],
+        comment: r[4]
       )
     end
 
     # デバック用
-    # quiz = Quiz.create(title: "test", url: "test", spreadsheet_id: "test")
     # コンソールにて SpreadsheetsImportJob.perform_now("19pNJTNF2lRx45zKisC7H3HtqVOrhbojwZToz0rRs_30", ["シート1!A:E"], 1) を実行する
   end
 
@@ -34,3 +36,6 @@ class SpreadsheetsImportJob < ApplicationJob
     end
 
 end
+
+# resからquestionsとanswersを作る方法
+# https://paiza.io/projects/Ph6d5ad8x_JUrfU5URm0fQ?locale=en-us

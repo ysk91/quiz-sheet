@@ -1,0 +1,84 @@
+class SpreadsheetsImportJob < ApplicationJob
+  queue_as :default
+
+  # ハッシュの構造を定義
+  QuestionRow = Struct.new(
+    :quiz_id,
+    :question
+  )
+
+  AnswerRow = Struct.new(
+    :question_id,
+    :correct,
+    :incorrect_1,
+    :incorrect_2,
+    :comment
+  )
+
+  # performメソッドを定義
+  def perform(spreadsheet_id, range, quiz_id)
+    # APIで取得したデータをresローカル変数に代入
+    res = google_spreadsheet_service.get_values(spreadsheet_id, range)
+    # 値が空だった場合はここで終了
+    return if res.values.empty?
+
+    # #questionsを作成==================
+
+    #row_questions配列を定義
+    row_questions = []
+
+    res.values.drop(1).each do |r|
+      row_questions << r[0]
+    end
+
+    questions_array = []
+
+    row_questions.each do |q|
+      question = QuestionRow.new(
+        quiz_id,
+        q
+      )
+      questions_array << question
+    end
+
+    # questions = Question.create!(questions_array)
+
+    # #answersを作成==================
+
+    row_answers = []
+
+    res.values.drop(1).each do |r|
+      row_answers << [r[1], r[2], r[3], r[4] ]
+    end
+
+    answers_array = []
+
+    row_answers.each do |a|
+      answer = AnswerRow.new(
+        quiz_id,
+        a[0],
+        a[1],
+        a[2],
+        a[3]
+      )
+      answers_array << answer
+    end
+
+    # answers = Answer.create!(answers_array)
+
+    # デバック用
+    # コンソールにて SpreadsheetsImportJob.perform_now("19pNJTNF2lRx45zKisC7H3HtqVOrhbojwZToz0rRs_30", ["シート1!A:E"], 1) を実行する
+    p questions_array
+    p anwsers_array
+  end
+
+  private
+
+    def google_spreadsheet_service
+      @google_spreadsheet_service ||= Google::Spreadsheets.new
+    end
+
+end
+
+# resからquestionsとanswersを作る方法
+# https://paiza.io/projects/Ph6d5ad8x_JUrfU5URm0fQ?locale=en-us
