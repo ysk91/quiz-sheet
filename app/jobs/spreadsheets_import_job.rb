@@ -34,6 +34,3 @@ class SpreadsheetsImportJob < ApplicationJob
     end
 
 end
-
-# resからquestionsとanswersを作る方法
-# https://paiza.io/projects/Ph6d5ad8x_JUrfU5URm0fQ?locale=en-us
