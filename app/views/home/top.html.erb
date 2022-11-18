@@ -4,10 +4,44 @@
   </button>
 
   <div class="mt-3">
-    <%= link_to("Quiz作成はこちら", "#", target: :_blank, rel: "noopener") %>
+    <%= link_to("Quiz作成はこちら", "https://docs.google.com/spreadsheets/d/19pNJTNF2lRx45zKisC7H3HtqVOrhbojwZToz0rRs_30", target: :_blank, rel: "noopener") %>
   </div>
 
   <button type="button" class="btn btn-primary btn-lg mt-3">
     <%= link_to("Quizに答える", quizzes_path, {class: "text-white text-decoration-none"}) %>
   </button>
+</div>
+
+<hr>
+<div class="about my-3">
+  <h2>Quiz-sheetの使い方</h2>
+  <p>当アプリは、Googleスプレッドシートに記載したクイズを表示する機能をもちます。</p>
+  <h3>Quizをアップロード</h3>
+  <p>作成したクイズスプレッドシートをアップロードするにはここのリンクからページ遷移します。</p>
+  <h3>Quiz作成はこちら</h3>
+  <p>クイズを作成するにはここのリンクからスプレッドシートを開きます。<br>
+    リンク先はサンプルシートとなっています。スプレッドシートをコピーすることで新規に作成できます。</p>
+  <h3>Quizに答える</h3>
+  <p>今まで作成されたクイズの内容が見れたり、クイズに答えることができます</p>
+</div>
+
+<hr>
+
+<div class="how-to-make">
+  <h2>Quizの新規作成</h2>
+  <p>「Quiz作成はこちら」をクリックすると、サンプルスプレッドシートが表示されます。<br>
+    ファイル > コピーを作成 から、スプレッドシートをコピーします。<br>
+    スプレッドシートの「共有設定」を「リンクを知っている全員」に変更します。<br>
+    <%= image_tag('spreadsheet-share.png', class: "mt-2", width: "50%" ) %>
+  </p>
+  <h3>スプレッドシート各項目の説明</h3>
+  <%= image_tag('sample-spreadsheet.png', class: "mt-2 container-fluid" ) %>
+  <div class="mb-2"><span class="fs-5">Question (A列)</span><br>
+    設問を記入します。本アプリは3択問題なので、それに即した設問文にします。</div>
+  <div class="mb-2"><span class="fs-5">Correct (B列)</span><br>
+    選択肢のうち、正解を記入します。</div>
+  <div class="mb-2"><span class="fs-5">Incorrect_1, Incorrect_2 (C, D列)</span><br>
+    選択肢のうち、不正解を記入します。</div>
+  <div class="mb-2"><span class="fs-5">Comment (E列)</span><br>
+    答えに対する補足事項を記入します。改行も反映されます。</div>
 </div>

@@ -1,5 +1,22 @@
-@import '~bootstrap/scss/bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+  font-size: 1rem;
+  h1 {
+    font-size: 2em;
+    color: #165290;
+  }
+  h2 {
+    font-size: 1.5em;
+    color: #165290;
+  }
+  h3 {
+    font-size: 1.2em;
+    color: #165290;
+  }
+}
 
 li {
-  list-style-type: none !important;
+  list-style-type: none;
 }
