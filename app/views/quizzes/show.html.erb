@@ -2,40 +2,42 @@
 
 <ul>
   <li>
-    <%= @quiz.id %>
+    <strong>id: </strong><%= @quiz.id %>
   </li>
   <li>
-    <%= @quiz.title %>
+    <strong>Title: </strong><%= @quiz.title %>
   </li>
   <li>
-    <%= @quiz.url %>
+    <strong>URL: </strong><%= link_to(@quiz.url, @quiz.url, target: :_blank, rel: "noopener") %>
   </li>
   <li>
-    <%= @quiz.spreadsheet_id %>
+    <strong>spreadsheet_id: </strong><%= @quiz.spreadsheet_id %>
   </li>
 </ul>
+<div class="text-center">
+  <button type="button" class="btn btn-primary btn-lg mt-3">
+    <%= link_to("Quizに答える", quiz_answer_path(@quiz), {class: "text-white text-decoration-none"}) %>
+  </button>
+</div>
 
+<hr>
 
 <% @questions.each_with_index do |q, i| %>
-  <div class="mb-3">
-    <h5>
-      Q<%= i+1 %>, <%= q.question %>
-    </h5>
+  <div class="mb-4">
+    <p class="fs-4">Q<%= i+1 %>, <%= q.question %></p>
     <div class="container">
       <div class="row">
-        <div class="col my-3">
-          <%= q.answer.correct %>
+        <div class="col">
+          <i class="bi bi-circle"> </i><%= q.answer.correct %>
         </div>
-        <div class="col my-3">
-          <%= q.answer.incorrect_1 %>
+        <div class="col">
+          <i class="bi bi-x-lg"> </i><%= q.answer.incorrect_1 %>
         </div>
-        <div class="col my-3">
-          <%= q.answer.incorrect_2 %>
+        <div class="col">
+          <i class="bi bi-x-lg"> </i><%= q.answer.incorrect_2 %>
         </div>
       </div>
-    </div>
-    <div>
-      <%= q.answer.comment %>
+      <p><%= simple_format(q.answer.comment) %></p>
     </div>
   </div>
 <% end %>
