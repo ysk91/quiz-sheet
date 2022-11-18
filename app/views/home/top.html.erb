@@ -24,3 +24,24 @@
   <h3>Quizに答える</h3>
   <p>今まで作成されたクイズの内容が見れたり、クイズに答えることができます</p>
 </div>
+
+<hr>
+
+<div class="how-to-make">
+  <h2>Quizの新規作成</h2>
+  <p>「Quiz作成はこちら」をクリックすると、サンプルスプレッドシートが表示されます。<br>
+    ファイル > コピーを作成 から、スプレッドシートをコピーします。<br>
+    スプレッドシートの「共有設定」を「リンクを知っている全員」に変更します。<br>
+    <%= image_tag('spreadsheet-share.png', class: "mt-2", width: "50%" ) %>
+  </p>
+  <h3>スプレッドシート各項目の説明</h3>
+  <%= image_tag('sample-spreadsheet.png', class: "mt-2 container-fluid" ) %>
+  <div class="mb-2"><span class="fs-5">Question (A列)</span><br>
+    設問を記入します。本アプリは3択問題なので、それに即した設問文にします。</div>
+  <div class="mb-2"><span class="fs-5">Correct (B列)</span><br>
+    選択肢のうち、正解を記入します。</div>
+  <div class="mb-2"><span class="fs-5">Incorrect_1, Incorrect_2 (C, D列)</span><br>
+    選択肢のうち、不正解を記入します。</div>
+  <div class="mb-2"><span class="fs-5">Comment (E列)</span><br>
+    答えに対する補足事項を記入します。改行も反映されます。</div>
+</div>

@@ -14,6 +14,11 @@
     <strong>spreadsheet_id: </strong><%= @quiz.spreadsheet_id %>
   </li>
 </ul>
+<div class="text-center">
+  <button type="button" class="btn btn-primary btn-lg mt-3">
+    <%= link_to("Quizに答える", quiz_answer_path(@quiz), {class: "text-white text-decoration-none"}) %>
+  </button>
+</div>
 
 <hr>
 
