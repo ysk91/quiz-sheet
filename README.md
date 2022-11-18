@@ -3,16 +3,22 @@
 Googleスプレッドシートと連携してクイズを作成するアプリです
 
 ### 環境構築
-DockerHub: https://hub.docker.com/r/ysk91/quiz-sheet<br>
+
+```
+$ git clone
+```
+でレポジトリをcloneする。
+
 ```
 $ docker pull ysk91/quiz-sheet
 ```
-でDockerファイルをpull
+でDockerファイルをpullする。
+(DockerHub: https://hub.docker.com/r/ysk91/quiz-sheet)
 
 ```
 $ docker-compose up -d
 ```
-を実行し、 http://localhost:3000/ にアクセス
+を実行し、 http://localhost:3000/ にアクセスする。
 
 
 ## 使用技術
