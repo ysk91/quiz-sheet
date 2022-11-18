@@ -10,7 +10,7 @@ $ docker pull ysk91/quiz-sheet
 でDockerファイルをpull
 
 ```
-$ docker-compose run -d
+$ docker-compose up -d
 ```
 を実行し、 http://localhost:3000/ にアクセス
 
