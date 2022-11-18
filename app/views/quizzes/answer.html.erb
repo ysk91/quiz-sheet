@@ -4,9 +4,9 @@
 
 <% @questions.each_with_index do |q, i| %>
   <div class="mb-5">
-    <h4>
+    <h3>
       Q<%= i+1 %>, <%= q.question %>
-    </h4>
+    </h3>
 
     <div class="container">
       <div class="row item_wrapper_<%= i+1 %>">
@@ -23,13 +23,13 @@
     </div>
     <div class="collapse mt-2" id="correct_<%= i+1 %>">
       <div class="card card-body">
-        <h5>正解!</h5>
-        <%= q.answer.comment %>
+        <p class="fs-4 mt-2">正解!</p>
+        <%= simple_format(q.answer.comment) %>
       </div>
     </div>
     <div class="collapse mt-2" id="incorrect_<%= i+1 %>">
       <div class="card card-body">
-        <h5>不正解!</h5>
+        <p class="fs-4 mt-2">不正解!</p>
       </div>
     </div>
   </div>
