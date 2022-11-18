@@ -1,7 +1,7 @@
 # Readme
 
 ## Quiz-Sheet
-サイトURL: <br>
+サイトURL: 22/11/18現在 本番環境未デプロイ<br>
 Googleスプレッドシートと連携してクイズを作成するアプリです
 
 ### 環境構築
@@ -22,10 +22,10 @@ $ docker-compose run -d
 + Rails 6.1.7
 + VScode
 + データベース
-  + 開発・テスト環境・本番環境: MySQL5.7
+  + 開発, テスト環境, 本番環境: MySQL5.7
 + サーバー
   + AWS
-+ テスト
++ テスト (22/11/18現在 未実装)
   + RSpec
 + フロントエンド
   + Bootstrap
@@ -40,8 +40,7 @@ $ docker-compose run -d
 ## 機能一覧
 + CRUD
 + Google Spreadsheet API
-
-
++ Active Job
 
 ## テスト方法
 
