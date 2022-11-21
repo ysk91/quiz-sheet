@@ -5,7 +5,7 @@ Googleスプレッドシートと連携してクイズを作成するアプリ�
 ### 環境構築
 
 ```
-$ git clone -b　https://github.com/ysk91/quiz-sheet.git
+$ git clone -b master https://github.com/ysk91/quiz-sheet.git
 ```
 でmasterレポジトリをcloneする。
 
