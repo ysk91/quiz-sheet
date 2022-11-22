@@ -1,25 +1,10 @@
 ## Quiz-Sheet
 サイトURL: 22/11/18現在 本番環境未デプロイ<br>
 Googleスプレッドシートと連携してクイズを作成するアプリです
+動作の様子（YouTube）: https://youtu.be/6ZD5WdkMFuo
 
-### 環境構築
-
-```
-$ git clone -b master https://github.com/ysk91/quiz-sheet.git
-```
-でmasterレポジトリをcloneする。
-
-```
-$ docker pull ysk91/quiz-sheet
-```
-でDockerファイルをpullする。
-(DockerHub: https://hub.docker.com/r/ysk91/quiz-sheet)
-
-```
-$ docker-compose up -d
-```
-を実行し、 http://localhost:3000/ にアクセスする。
-
+### 開発環境
+DockerHub: https://hub.docker.com/r/ysk91/quiz-sheet
 
 ## 使用技術
 + Ruby 3.0.4
@@ -48,10 +33,6 @@ $ docker-compose up -d
 + Active Job
 
 ## テスト方法
-
-
-## フィードバック
-
 
 ## アウトプット
 [Qiita](https://qiita.com/ysk91_engineer)参照
