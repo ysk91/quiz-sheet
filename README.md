@@ -2,6 +2,7 @@
 サイトURL: 22/11/18現在 本番環境未デプロイ<br>
 Googleスプレッドシートと連携してクイズを作成するアプリです<br>
 動作の様子（YouTube）: https://youtu.be/6ZD5WdkMFuo
+改善点は[Issue](https://github.com/ysk91/quiz-sheet/issues/11)へ
 
 ### 開発環境
 DockerHub: https://hub.docker.com/r/ysk91/quiz-sheet
