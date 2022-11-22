@@ -1,6 +1,6 @@
 ## Quiz-Sheet
 サイトURL: 22/11/18現在 本番環境未デプロイ<br>
-Googleスプレッドシートと連携してクイズを作成するアプリです
+Googleスプレッドシートと連携してクイズを作成するアプリです<br>
 動作の様子（YouTube）: https://youtu.be/6ZD5WdkMFuo
 
 ### 開発環境
