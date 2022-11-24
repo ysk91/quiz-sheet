@@ -13,9 +13,9 @@ DockerHub: https://hub.docker.com/r/ysk91/quiz-sheet
 + VScode
 + データベース
   + 開発, テスト環境, 本番環境: MySQL5.7
-+ サーバー
++ サーバー (22/11/25現在 未デプロイ)
   + AWS
-+ テスト (22/11/18現在 未実装)
++ テスト
   + RSpec
 + フロントエンド
   + Bootstrap
