@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "Quizモデルのテスト" do
   describe "バリデーションのテスト" do
-    # let!(:quiz) { build(:title, :url, :spreadsheet_id) }
     let!(:test_title) {"test"}
     let!(:test_url) {"https://docs.google.com/spreadsheets/d/19pNJTNF2lRx45zKisC7H3HtqVOrhbojwZToz0rRs_30/edit#gid=0"}
     let!(:test_spreadsheet_id) {"19pNJTNF2lRx45zKisC7H3HtqVOrhbojwZToz0rRs_30"}
