@@ -13,4 +13,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import 'bootstrap'
-import '../stylesheets/application'
+import '/myapp/app/assets/stylesheets/application'
